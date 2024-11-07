@@ -1,0 +1,116 @@
+/* Reset some basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #483939;
+    color: white;
+}
+
+/* Sticky Banner */
+.banner {
+    position: sticky;
+    top: 0;
+    background-color: rgb(66, 47, 22);
+    padding: 1em;
+    font-size: 1.5em;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+}
+
+/* Banner Box */
+.banner-box {
+    background-color: rgb(79, 68, 54); 
+    padding: 0.5em 2em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar with buttons (left column) */
+.sidebar-container {
+    display: flex; /* Flexbox to hold both sidebar and main content side by side */
+}
+
+/* Sidebar with Buttons */
+.sidebar {
+    position: fixed;
+    top: 95px; /* Height of the banner */
+    left: 0;
+    width: 240px; /* Increase width to fit buttons comfortably */
+    background-color: #333;
+    padding-top: 1em;
+    height: calc(100vh - 95px); /* Full height minus the banner height */
+    display: flex;
+    flex-direction: column;
+    gap: 1em; /* Space between rows */
+    overflow-y: auto; /* Allow scrolling if the content exceeds the screen height */
+}
+
+/* Building column layout (right column) */
+.building-column {
+    position: fixed;
+    top: 95px; /* Height of the banner */
+    left: 240px; /* Start right after the sidebar */
+    width: 240px;
+    background-color: #555;
+    padding-top: 0.5em; /* Reduced padding to bring buttons higher */
+    height: calc(100vh - 95px);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em; /* Reduced space between buttons */
+    overflow-y: auto;
+}
+
+/* Button styling */
+.sidebar button {
+    flex: 1; /* Allow buttons to take equal space */
+    padding: 0.8em; /* Adjust padding for better fitting */
+    color: white;
+    background-color: #444;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.8em;
+    min-width: 70px; /* Set a minimum width for the buttons */
+}
+
+.sidebar button:hover {
+    background-color: #555;
+}
+
+/* Button styling for building column */
+.building-column button {
+    padding: 0.8em; /* Adjust padding for better fitting */
+    color: white;
+    background-color: #444;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.8em;
+    min-width: 70px; /* Set a minimum width for the buttons */
+}
+
+.building-column button:hover {
+    background-color: #555;
+}
+
+/* Main Content Box (right content area) */
+.main-content {
+    margin-left: 480px; /* Sidebar + Building Column width */
+    padding: 2em;
+    background-color: #f4f4f4;
+    height: calc(100vh - 95px); /* Ensure it takes the remaining height */
+    overflow-y: auto; /* Allow scrolling if the content exceeds the screen height */
+    transition: margin-left 0.3s; /* Smooth transition when sidebar width changes */
+}
+
+.content-box {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 2em;
+    border: 1px solid #d30f0f;
+    border-radius: 8px;
+}
